@@ -1,4 +1,6 @@
 process check_env {
+    label 'process_medium'
+    disk '20 GB'
     errorStrategy {task.attempt <=5 ? 'retry' : 'terminate'}
     output:
         path("*env.txt") into check_env_out
